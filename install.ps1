@@ -1,11 +1,10 @@
-<#
-==================================================================================================================
-Name:           
-Description:    
-Version:        1.0
-Date :          26/2/2023
-Website:        https://bonben365.com
-Script by:      https://github.com/bonben365
-For detailed script execution: https://bonben365.com/
-=================================================================================================================
-#>
+#Create a temporary directory to store Google Chrome.
+md -Path $env:temp\chromeinstall -erroraction SilentlyContinue | Out-Null
+$Download = join-path $env:temp\chromeinstall chrome_installer.exe
+
+#Download the Google Chrome installer.
+$url = 'https://dl.google.com/chrome/install/latest/chrome_installer.exe'
+Invoke-WebRequest $url  -OutFile $Download
+
+#Perform a silent installation of Google Chrome.
+Invoke-Expression "$Download /silent /install"
