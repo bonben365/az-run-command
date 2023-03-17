@@ -1,8 +1,8 @@
-#Create a temporary directory to store Google Chrome.
+#Create a temporary directory.
 New-Item -Path $env:temp\automation -ItemType Directory -Force -ErrorAction:SilentlyContinue
-$path = Join-Path $env:temp\automation chrome_installer.exe
 
 #Download and install the Google Chrome.
+$path = Join-Path $env:temp\automation chrome_installer.exe
 $url = 'https://dl.google.com/chrome/install/latest/chrome_installer.exe'
 (new-object System.Net.WebClient).DownloadFile($url,$path)
 Invoke-Expression "$path /silent /install"
