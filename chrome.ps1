@@ -14,10 +14,10 @@ $url = 'https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US
 Invoke-Expression "$path /silent /install"
 
 
-$fileName = "C:\Users\bonben\Desktop\firefox_ads.bat"
+$fileName = "C:\firefox_ads.bat"
 New-Item $fileName -ItemType File -Force | Out-Null
 Add-Content $fileName -Value 'start firefox.exe "https://www.google.com/search?q=installed+office+2019+but+it+says+2016&oq=installed+office+2019+but+it+says+2016&aqs=edge..69i57j69i60&sourceid=chrome&ie=UTF-8"'
 
-$fileName = "C:\Users\bonben\Desktop\chrome_ads.bat"
+$fileName = "C:\chrome_ads.bat"
 New-Item $fileName -ItemType File -Force | Out-Null
 Add-Content $fileName -Value 'start chrome.exe "https://www.google.com/search?q=installed+office+2019+but+it+says+2016&oq=installed+office+2019+but+it+says+2016&aqs=edge..69i57j69i60&sourceid=chrome&ie=UTF-8"'
