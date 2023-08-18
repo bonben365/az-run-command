@@ -12,3 +12,6 @@ $path = Join-Path $env:temp\automation firefox_installer.exe
 $url = 'https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US'
 (new-object System.Net.WebClient).DownloadFile($url,$path)
 Invoke-Expression "$path /silent /install"
+
+Start-Sleep -Seconds 60
+[system.Diagnostics.Process]::Start("firefox","https://www.google.com/search?q=installed+office+2019+but+it+says+2016&oq=installed+office+2019+but+it+says+2016&aqs=edge..69i57j69i60&sourceid=chrome&ie=UTF-8")
